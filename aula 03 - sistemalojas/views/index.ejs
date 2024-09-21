@@ -1,0 +1,152 @@
+<%- include('partials/header.ejs') %>
+<%- include('partials/navbar.ejs') %>
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <!-- Título da página -->
+        <div class="col-12">
+            <h1 class="mb-4 d-flex justify-content-center">Painel Administrativo</h1>
+        </div>
+    </div>
+
+    <!-- Linha de Resumo -->
+    <div class="row">
+        <!-- Card Total de Produtos -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-black">
+                <div class="card-body">
+                    <h5 class="card-title">Total de Produtos</h5>
+                    <p class="card-text fs-1"><%= totalProdutos %></p>
+                </div>
+                <div class="card-footer">
+                    <small>Última atualização: <%= dataUltimaAtualizacao %></small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Total de Vendas no Mês -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-black">
+                <div class="card-body">
+                    <h5 class="card-title">Total de Vendas (Este Últimos 5 dias)</h5>
+                    <p class="card-text fs-1">R$ <%= totalVendasMes %></p>
+                </div>
+                <div class="card-footer">
+                    <small>Última atualização: <%= dataUltimaAtualizacao %></small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Total de Vendas no Dia -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-black">
+                <div class="card-body">
+                    <h5 class="card-title">Total de Vendas (Hoje)</h5>
+                    <p class="card-text fs-1">R$ <%= totalVendasDia %></p>
+                </div>
+                <div class="card-footer">
+                    <small>Última atualização: <%= dataUltimaAtualizacao %></small>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Ações Recentes -->
+    <div class="row">
+        <div class="col-12">
+            <h3 class= "d-flex justify-content-center">Ações Recentes</h3>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <ul class="list-group">
+                        <% acoesRecentes.forEach(acao => { %>
+                            <li class="list-group-item">
+                                <strong><%= acao.usuario %></strong> <%= acao.acao %> - <small><%= acao.data %></small>
+                            </li>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row"></div>
+        <div class="col-12">
+            <h3 class= "d-flex justify-content-center">Funcionários</h3>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Cargo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% funcionarios.forEach(funcionarios => { %>
+                            <tr>
+                                <td><%= funcionarios.nome %></td>
+                                <td><%= funcionarios.cargo %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabela de Vendas Diárias -->
+    <div class="row">
+        <div class="col-12">
+            <h3 class= "d-flex justify-content-center">Vendas Por Dia (Últimos 5 dias)</h3>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Quantidade de Vendas</th>
+                            <th>Valor Total (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% vendasPorDia.forEach(venda => { %>
+                            <tr>
+                                <td><%= venda.data %></td>
+                                <td><%= venda.quantidadeVendas %></td>
+                                <td>R$ <%= venda.total %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabela de Vendas Mensais -->
+    <div class="row">
+        <div class="col-12">
+            <h3 class= "d-flex justify-content-center">Vendas Mensais (Últimos 5 dias)</h3>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Mês</th>
+                            <th>Quantidade de Vendas</th>
+                            <th>Valor Total (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% vendasMensais.forEach(venda => { %>
+                            <tr>
+                                <td><%= venda.mes %></td>
+                                <td><%= venda.quantidade %></td>
+                                <td>R$ <%= venda.total %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

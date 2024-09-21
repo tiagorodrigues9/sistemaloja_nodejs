@@ -1,0 +1,62 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+    <h1 class="page-title">Clientes</h1>
+
+    <div class="table-container">
+        <h2 class="table-title">Clientes Recentes</h2>
+        <table class="table table-chromatic">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Endereço</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% pedidos.forEach(pedido => { %>
+                    <tr>
+                        <td><%= pedido.nome %></td>
+                        <td><%= pedido.cpf %></td>
+                        <td><%= pedido.endereco %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-container">
+        <h2 class="table-title">Clientes que Mais Compraram</h2>
+        <table class="table table-chromatic">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Endereço</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                
+                <% const clientesMaisCompraram = [
+                    { nome: 'Lucas Takeo', cpf: '612.777.267-28', endereco: 'Rua Shigetoshi Nomura, nº 315' },
+                    { nome: 'Pedro Abner', cpf: '058.822.340-93', endereco: 'Avenida Clara Gianotti de Souza, nº 742' },
+                    { nome: 'Tiago Ackerman', cpf: '959.430.518-56', endereco: 'Rua Seis, nº 183' },
+                    { nome: 'Pablo Henrique', cpf: '280.977.946-59', endereco: 'Rua Joaquim Marques Alves, nº 564' },
+                    { nome: 'João Marcos', cpf: '902.484.323-54', endereco: 'Rua Papa João XXIII, nº 202' }
+                ]; %>
+
+                <% clientesMaisCompraram.forEach(cliente => { %>
+                    <tr>
+                        <td><%= cliente.nome %></td>
+                        <td><%= cliente.cpf %></td>
+                        <td><%= cliente.endereco %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+<%- include ('partials/footer.ejs') %>
+

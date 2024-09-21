@@ -1,0 +1,107 @@
+body {
+    background-color: #f4f4f4;
+}
+
+/*Estilo de Header*/
+header {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h5 {
+    font-size: 1.25rem;
+    margin-bottom: 1%;
+}
+
+
+
+/*Estilo da Navbar*/
+.navbar {
+    background-color: #343a40;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: -16px;
+}
+
+.navbar-nav .nav-link {
+    color: #f8f9fa;
+    font-weight: 500;
+}
+
+/*Estilo do Campo de Pesquisa*/
+
+.form-inline {
+    display: flex;
+    align-items: center;
+}
+
+/*Estilo dos Cards*/
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+#fotos{
+    object-fit: contain;
+}
+
+.card-body {
+    text-align: center;
+}
+
+#cardProd{
+    height: 420px;
+}
+
+
+
+/*Estilo do Rodapé*/
+
+footer {
+    background-color: #161616;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+/*Estilo das Tabelas*/
+
+.table {
+    margin: 0 auto;
+    max-width: 800px;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 12px;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.table, .table th, .table td {
+    border: 1px solid #dee2e6;
+    text-align: center;
+}
+
+.page-title, .table-title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+
+/*Estilo das Seções (Produtos)*/
+
+section {
+    padding: 40px 20px;
+    margin-bottom: 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+
+
+

@@ -1,0 +1,26 @@
+<%- include('partials/header.ejs') %>
+<%- include('partials/navbar.ejs') %>
+
+    <h1 class="page-title">Nossos Produtos</h1>
+
+    <% Object.keys(categorias).forEach((categoria) => { %>
+        <section class="categoria">
+            <h2 class="section-title"><%= categoria %></h2>
+            <div class="row justify-content-center">
+                <% categorias[categoria].forEach((produto) => { %>
+                    <div class="col-md-2 g-4">
+                        <div class="card" id="cardProd">
+                            <img src="<%= produto.imagem %>" class="card-img-top" id="fotos" width="auto" alt="<%= produto.nome %>">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= produto.nome %></h5>
+                                <p class="card-text">R$<%= produto.preco %></p>
+                                <p class="card-text"><strong>Estoque:</strong> <%= produto.quantidade %> unidades</p>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </section>
+    <% }) %>
+
+<%- include('partials/footer.ejs') %>

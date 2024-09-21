@@ -1,0 +1,33 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/navbar.ejs') %>
+
+    <h1 class="page-title">Pedidos (Últimos 15 pedidos)</h1>
+
+
+    <div class="container">
+        <div class="table-wrapper">
+            <table class="table table-chromatic">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Data</th>
+                        <th>Nome</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% pedidos.forEach((pedido) => { %>
+                        <tr>
+                            <td class="text-center"><%= pedido.id %></td>
+                            <td><%= pedido.data%></td>
+                            <td><%= pedido.nome %></td>
+                            <td class="text-right">R$ <%= pedido.valor.toFixed(2) %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<%- include ('partials/footer.ejs') %>
